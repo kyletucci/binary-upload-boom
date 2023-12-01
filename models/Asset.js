@@ -1,24 +1,24 @@
 const mongoose = require("mongoose");
 
-const PostSchema = new mongoose.Schema({
-  title: {
+const AssetSchema = new mongoose.Schema({
+  primaryUser: {
     type: String,
     required: true,
   },
-  image: {
+  department: {
     type: String,
     require: true,
   },
-  cloudinaryId: {
+  model: {
     type: String,
     require: true,
   },
-  caption: {
-    type: String,
+  deployDate: {
+    type: Date,
     required: true,
   },
-  likes: {
-    type: Number,
+  expirationDate: {
+    type: Date,
     required: true,
   },
   user: {
@@ -31,4 +31,4 @@ const PostSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("Post", PostSchema);
+module.exports = mongoose.model("Asset", AssetSchema);
