@@ -60,8 +60,8 @@
         </thead>
         <tbody>
           <% for(var i=0; i<assets.length; i++) {%>
-            <%if((assets[i].expirationDate.getTime() - assets[i].deployDate .getTime()) / (1000 * 3600 * 24) < 30){ %>  
-              <tr class="table-danger">
+            <%if((assets[i].expirationDate.getTime() - new Date().getTime()) / (1000 * 3600 * 24) < 30){ %>  
+              <tr class="table-danger" data-toggle="tooltip" data-placement="top" title="Asset expires in <%= Math.floor((assets[i].expirationDate.getTime() - new Date().getTime()) / (1000 * 3600 * 24)) %> days">
             <%} else{ %>
               <tr>
             <% } %>
