@@ -1,0 +1,65 @@
+<%- include('partials/header') -%>
+<div class="container">
+    <div class="col p-5">
+        <table class="table table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col-2">Subject</th>
+                    <th scope="col-2">Description</th>
+                    <th scope="col-2">Severity</th>
+                    <th class="text-center" scope="col-2">Submission Date</th>
+                    <th class="text-center" scope="col-2">Submission Time</th> 
+                    <th scope="col-2">Submitted By</th> 
+                </tr>
+            </thead>
+            <tbody>
+                <% for(var i=0; i<tickets.length; i++) {%>
+                <%if(tickets[i].severity === "High"){ %>  
+                    <tr class="table-danger">
+                <%} else if(tickets[i].severity === "Medium"){ %>
+                    <tr class="table-warning">
+                <%} else{ %>
+                    <tr>
+                <% } %>
+                    <td><%= tickets[i].description %></td>
+                    <td><%= tickets[i].severity %></td>
+                    <td class="text-center"><%= tickets[i].submittedOn.toLocaleDateString() %></td>
+                    <td class="text-center"><%= tickets[i].submittedOn.toLocaleTimeString() %></td>
+                    <td class="text-center"><%= user.userName %></td>
+                    <td class="text-center">
+                        <form action="/tickets/deleteTicket/<%= tickets[i]._id %>?_method=DELETE" method="POST">
+                            <button class="btn btn-primary fa fa-trash" type="submit"></button>
+                        </form>
+                    </td> 
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div> <!--users table-->
+    <a href="/profile" class="col-2 btn btn-primary ms-5">Assets</a>
+    <div class="row asset-container bg-light p-5 mx-5">
+        <div class="col">
+            <h2>Submit A Ticket</h2>
+            <form action="/tickets/createTicket" method="POST">
+                <div class="form-group mb-3">
+                    <label for="subject" class="form-label">Subject</label>
+                    <input type="text" class="form-control" id="subject" name="subject">
+                </div>
+                <div class="form-group mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <input type="text" class="form-control" id="description" name="description">
+                </div>
+                <div class="form-group mb-3">
+                    <label for="severity" class="form-label">Severity</label>
+                    <select class="form-control" id="severity" name="severity">
+                        <option value="Low">Low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="High">High</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div> <!--asset form-->
+    </div>
+</div> <!--container -->
+<%- include('partials/footer') -%>

@@ -6,7 +6,8 @@
       <p><strong>Site</strong>: <%= user.site %></p>
       <a href="/logout" class="col-3 btn btn-primary">Logout</a>
   </div>
-  <div class="row asset-container">
+  <a href="/tickets" class="col-2 btn btn-primary mb-1">Tickets</a>
+  <div class="row asset-container bg-light p-5">
     <div class="col">
       <h2>Add asset</h2>
       <form action="/assets/createAsset/<%= user.id %>" method="POST">
@@ -47,8 +48,8 @@
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
     </div> <!--asset form-->
-    <div class="col">
-      <table class="table table-hover">
+    <div class="col p-5">
+      <table class="table table-hover align-middle">
         <thead class="thead-dark">
           <tr>
             <th scope="col-2">Primary User</th>
