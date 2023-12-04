@@ -6,7 +6,7 @@
     Asset Manager and Ticketing System for IT Professionals
     <br/>
     <br/>
-    <a href="https://github.com/kyletucci/it-asset-ticketing">View Demo</a>
+    <a href="https://it-portal.cyclic.app/">View Demo</a>
     .
   </p>
 </p>
