@@ -1,5 +1,36 @@
 <%- include('partials/header') -%>
 <div class="container">
+    <div class="d-flex flex-row justify-content-between mt-3 p-3">
+        <p><strong>User Name</strong>: <%= user.userName %></p>
+        <p><strong>Email</strong>: <%= user.email %></p>
+        <p><strong>Site</strong>: <%= user.site %></p>
+        <a href="/logout" class="col-3 btn btn-primary">Logout</a>
+    </div>
+    <a href="/profile" class="col-2 btn btn-primary ms-5">Assets</a>
+    <div class="row asset-container bg-light p-5 mx-5">
+        <div class="col">
+            <h2>Submit A Ticket</h2>
+            <form action="/tickets/createTicket" method="POST">
+                <div class="form-group mb-3">
+                    <label for="subject" class="form-label">Subject</label>
+                    <input type="text" class="form-control" id="subject" name="subject">
+                </div>
+                <div class="form-group mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <input type="text" class="form-control" id="description" name="description">
+                </div>
+                <div class="form-group mb-3">
+                    <label for="severity" class="form-label">Severity</label>
+                    <select class="form-control" id="severity" name="severity">
+                        <option value="Low">Low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="High">High</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div> <!--asset form-->
+    </div>
     <div class="col p-5">
         <table class="table table-hover">
             <thead class="thead-dark">
@@ -37,30 +68,6 @@
             </tbody>
         </table>
     </div> <!--users table-->
-    <a href="/profile" class="col-2 btn btn-primary ms-5">Assets</a>
-    <div class="row asset-container bg-light p-5 mx-5">
-        <div class="col">
-            <h2>Submit A Ticket</h2>
-            <form action="/tickets/createTicket" method="POST">
-                <div class="form-group mb-3">
-                    <label for="subject" class="form-label">Subject</label>
-                    <input type="text" class="form-control" id="subject" name="subject">
-                </div>
-                <div class="form-group mb-3">
-                    <label for="description" class="form-label">Description</label>
-                    <input type="text" class="form-control" id="description" name="description">
-                </div>
-                <div class="form-group mb-3">
-                    <label for="severity" class="form-label">Severity</label>
-                    <select class="form-control" id="severity" name="severity">
-                        <option value="Low">Low</option>
-                        <option value="Medium">Medium</option>
-                        <option value="High">High</option>
-                    </select>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-        </div> <!--asset form-->
-    </div>
+    
 </div> <!--container -->
 <%- include('partials/footer') -%>
