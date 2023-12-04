@@ -9,7 +9,7 @@
                     <th scope="col-2">Severity</th>
                     <th class="text-center" scope="col-2">Submission Date</th>
                     <th class="text-center" scope="col-2">Submission Time</th> 
-                    <th scope="col-2">Submitted By</th> 
+                    <th class="text-center" scope="col-2">Submitted By</th> 
                 </tr>
             </thead>
             <tbody>
@@ -21,6 +21,7 @@
                 <%} else{ %>
                     <tr>
                 <% } %>
+                    <td><%= tickets[i].subject %></td>
                     <td><%= tickets[i].description %></td>
                     <td><%= tickets[i].severity %></td>
                     <td class="text-center"><%= tickets[i].submittedOn.toLocaleDateString() %></td>
