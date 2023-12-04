@@ -15,6 +15,7 @@ module.exports = {
         primaryUser: req.body.primaryUser,
         department: req.body.department,
         model: req.body.model,
+        serviceTag: req.body.serviceTag,
         deployDate: req.body.deployDate,
         expirationDate: req.body.expirationDate,
         user: req.params.id

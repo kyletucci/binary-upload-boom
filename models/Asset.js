@@ -13,6 +13,10 @@ const AssetSchema = new mongoose.Schema({
     type: String,
     require: true,
   },
+  serviceTag: {
+    type: String,
+    require: true,
+  },
   deployDate: {
     type: Date,
     required: true,

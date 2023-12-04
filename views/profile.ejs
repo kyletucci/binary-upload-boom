@@ -13,7 +13,7 @@
       <form action="/assets/createAsset/<%= user.id %>" method="POST">
         <div class="form-group mb-3">
             <label for="primaryUser" class="form-label">Primary User</label>
-            <input type="text" class="form-control" id="primaryUser" name="primaryUser">
+            <input placeholder="Employee asset was issued to..." type="text" class="form-control" id="primaryUser" name="primaryUser">
         </div>
         <div class="form-group mb-3">
           <label for="department" class="form-label">Department</label>
@@ -29,7 +29,11 @@
         </div>
         <div class="form-group mb-3">
           <label for="model" class="form-label">Computer Model</label>
-          <input type="text" class="form-control" id="model" name="model">
+          <input placeholder="Model number of asset..." type="text" class="form-control" id="model" name="model">
+        </div>
+        <div class="form-group mb-3">
+          <label for="serviceTag" class="form-label">Service Tag</label>
+          <input placeholder="Service Tag number of asset..." type="text" class="form-control" id="serviceTag" name="serviceTag">
         </div>
         <div class="form-group mb-3">
           <label for="deployDate" class="form-label">Deploy Date</label>
@@ -49,6 +53,7 @@
             <th scope="col-2">Primary User</th>
             <th scope="col-2">Department</th>
             <th scope="col-2">Model</th>
+            <th scope="col-2">Service Tag</th>
             <th scope="col-2">Deploy Date</th>
             <th scope="col-2">Expiration Date</th> 
           </tr>
@@ -63,6 +68,7 @@
               <td><%= assets[i].primaryUser %></td>
               <td><%= assets[i].department %></td>
               <td><%= assets[i].model %></td>
+              <td><%= assets[i].serviceTag %></td>
               <td><%= assets[i].deployDate.toLocaleDateString() %></td>
               <td><%= assets[i].expirationDate.toLocaleDateString() %></td>
               <td>
