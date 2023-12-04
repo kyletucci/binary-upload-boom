@@ -3,7 +3,7 @@ const Ticket = require("../models/Ticket");
 module.exports = {
   getTickets: async (req, res) => {
     try {
-      const tickets = await Ticket.find().lean();
+      const tickets = await Ticket.find({ submittedBy: req.user.id });
       res.render("tickets.ejs", { tickets: tickets, user: req.user });
     } catch (err) {
       console.log(err);
