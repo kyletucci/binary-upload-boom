@@ -74,13 +74,13 @@ Sign up for an account and login
 
 To use the Asset Manager enter Primary User, Department, Computer Model, Service Tag, Deploy Date, and Expiration Date for any support contracts
 
-Assets will be highlighted <mark style="background: red!important">red</mark> if the Expiration Date is within 30 days of the current date
+Assets will be highlighted red if the Expiration Date is within 30 days of the current date
  
 ![Asset Manager](https://res.cloudinary.com/dcwvykrxv/image/upload/v1701694697/et548bzodkaa31acv56v.png)
 
 To use the Ticketing System enter a Subject, a short Description of your issue and the Severity of the problem
 
-High Severity issues will be highlighted in <mark style="background: red!important">red</mark> and Medium Severity issues will be highlighted in ==yellow== for a more visual organization of concerns 
+High Severity issues will be highlighted in red and Medium Severity issues will be highlighted in yellow for a more visual organization of concerns 
 
 ![Ticketing System](https://res.cloudinary.com/dcwvykrxv/image/upload/v1701694697/h9fm4rrxrr0upunqfflv.png)
 
