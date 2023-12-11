@@ -1,6 +1,10 @@
 const mongoose = require("mongoose");
 
 const SopSchema = new mongoose.Schema({
+  submittedBy: {
+    type: String,
+    ref: "User",
+  },
   title: {
     type: String,
     require: true,

@@ -20,7 +20,6 @@ module.exports = {
         expirationDate: req.body.expirationDate,
         user: req.params.id
       });
-      console.log(req.body)
       console.log("Asset has been added!");
       res.redirect("/profile");
     } catch (err) {

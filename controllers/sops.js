@@ -3,8 +3,16 @@ const Sop = require("../models/Sop");
 module.exports = {
     getSops: async (req, res) => {
       try {
-        const sops = await Sop.find();
+        const sops = await Sop.find().lean();
         res.render("sop.ejs", { sops: sops, user: req.user });
+      } catch (err) {
+        console.log(err);
+      }
+    },
+    displaySop: async (req, res) => {
+      try {
+        const sops = await Sop.find({ _id: req.params.id});
+        res.render("displaySop.ejs", { sops: sops, user: req.user });
       } catch (err) {
         console.log(err);
       }
@@ -12,6 +20,7 @@ module.exports = {
     createSop: async (req, res) => {
       try {
         await Sop.create({
+          submittedBy: req.user.userName,
           title: req.body.title,
           objective: req.body.objective,
           prerequisites: req.body.prerequisites,
