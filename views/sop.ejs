@@ -1,4 +1,9 @@
 <%- include('partials/header') -%>
+<div class="bg-light px-5 w-75 py-3 mx-auto d-flex justify-content-between align-items-center">
+  <p class="m-0"><strong>User Name</strong>: <%= user.userName %></p>
+  <p class="m-0"><strong>Email</strong>: <%= user.email %></p>
+  <p class="m-0"><strong>Site</strong>: <%= user.site %></p>
+</div>
 <div class="container mt-5">
   <div class="container d-flex justify-content-between">
     <div class="w-50 list-group">
@@ -19,19 +24,19 @@
             <input placeholder="Enter a title for the SOP" type="text" class="form-control" id="title" name="title">
         </div>
         <div class="form-group mb-3">
-          <label for="objective" class="form-label">I. Objective</label>
+          <label for="objective" class="form-label">Objective</label>
           <input placeholder="Enter the objective of the SOP" type="text" class="form-control" id="objective" name="objective">
         </div>
         <div class="form-group mb-3">
-          <label for="prerequisites" class="form-label">II. prerequisites</label>
+          <label for="prerequisites" class="form-label">Prerequisites</label>
           <input placeholder="Enter any prerequesites necessary to complete the procedure" type="text" class="form-control" id="prerequisites" name="prerequisites">
         </div>
         <div class="form-group mb-3">
-            <label for="procedure" class="form-label">III. Procedure</label>
+            <label for="procedure" class="form-label">Procedure</label>
             <textarea placeholder="Enter the necessary steps to complete to procedure" class="form-control" id="procedure" name="procedure"></textarea>
         </div>
         <div class="form-group mb-3">
-          <label for="conclusion" class="form-label">IV. Conclusion</label>
+          <label for="conclusion" class="form-label">Conclusion</label>
           <textarea placeholder="Enter the conclusion for the SOP" class="form-control" id="conclusion" name="conclusion"></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>

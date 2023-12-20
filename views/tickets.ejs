@@ -1,6 +1,11 @@
 <%- include('partials/header') -%>
+<div class="bg-light px-5 w-75 py-3 mx-auto d-flex justify-content-between align-items-center">
+    <p class="m-0"><strong>User Name</strong>: <%= user.userName %></p>
+    <p class="m-0"><strong>Email</strong>: <%= user.email %></p>
+    <p class="m-0"><strong>Site</strong>: <%= user.site %></p>
+  </div>
 <div class="container">
-    <div class="row asset-container bg-light p-5 mx-5">
+    <div class="row asset-container bg-light p-5 mx-5 mt-3">
         <div class="col">
             <h2>Submit A Ticket</h2>
             <form action="/tickets/createTicket" method="POST">

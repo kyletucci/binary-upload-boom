@@ -1,14 +1,12 @@
 <%- include('partials/header') -%>
 <h1 class="mt-3 text-center">SOP</h1>
 <div class="container mt-5 w-75">
-    <a href="/tickets" class="col-2 btn btn-primary mb-1">Tickets</a>
-    <a href="/sops" class="col-2 btn btn-primary mb-1">SOPs</a>
     <% for(var i=0; i<sops.length; i++) {%>
         <h1><%= sops[i].title %></h1>
         <h3>Submitted by: <%= sops[i].submittedBy %></h3>
         <p><strong>I. Objective: </strong><%= sops[i].objective %></p>
         <p><strong>II. Prerequisites: </strong><%= sops[i].prerequisites %></p>
-        <p><strong>III. Procedure: </strong><%= sops[i].procedure %></p>
+        <p style="white-space: pre-wrap"><strong>III. Procedure: </strong><br><%= sops[i].procedure %></p>
         <p><strong>IV. Conclusion: </strong><%= sops[i].conclusion %></p>
     <% } %>
 </div> <!--outer container-->

@@ -1,6 +1,10 @@
 <%- include('partials/header') -%>
-<div class="container">
-  <div class="row asset-container bg-light p-5 mb-5">
+  <div class="bg-light px-5 w-75 py-3 mx-auto d-flex justify-content-between align-items-center">
+    <p class="m-0"><strong>User Name</strong>: <%= user.userName %></p>
+    <p class="m-0"><strong>Email</strong>: <%= user.email %></p>
+    <p class="m-0"><strong>Site</strong>: <%= user.site %></p>
+  </div>
+<div class="container mt-3">
     <div class="col">
       <h2>Add asset</h2>
       <form action="/assets/createAsset/<%= user.id %>" method="POST">
